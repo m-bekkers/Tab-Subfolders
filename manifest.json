@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Tab Subfolders",
+    "version": "0.1.0",
+
+    "description": "Adds subfolders to browser tab folders",
+
+    "icons": {
+        "48": "icons/border-48.png"
+    },
+
+    "host_permissions": [
+        "<all_urls>",
+        "tabs"
+    ],
+
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "borderify@mozilla.org",
+            "data_collection_permissions": {
+                "required": ["none"]
+            }
+        }
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["*://*.mozilla.org/*"],
+            "js": ["subfolders.js"]
+        }
+    ]
+} 
